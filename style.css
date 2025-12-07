@@ -1,0 +1,187 @@
+/* CodePenの「CSS」エリアに貼り付け */
+
+/* かわいいフォントをGoogle Fontsから読み込み */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  background: #1a1f3a;
+  min-height: 100vh;
+  padding: 20px;
+  color: #e8eaf6;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #252d4a;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #a5b4fc;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: #c7d2fe;
+  margin: 30px 0 15px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* ボタン共通スタイル */
+.btn {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 10px 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* 録音ボタン */
+.btn-record {
+  background: #5b6faa;
+  color: white;
+}
+
+.btn-record:hover {
+  background: #6b7fba;
+}
+
+.btn-record.recording {
+  background: #7c88c2;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.btn-record:disabled {
+  background: #3a4158;
+  color: #6a7088;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-record.recording:disabled {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+/* 交換ボタン */
+.btn-exchange {
+  background: #4a5f8a;
+  color: white;
+}
+
+.btn-exchange:hover {
+  background: #5a6f9a;
+}
+
+.btn-exchange:disabled {
+  background: #3a4158;
+  color: #6a7088;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* タイマー */
+#timer {
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin: 20px 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* 波形キャンバス */
+#waveform {
+  display: block;
+  margin: 20px auto;
+  background: #1e2438;
+  border-radius: 8px;
+  border: 2px solid #3a4158;
+}
+
+/* オーディオプレイヤー */
+audio {
+  width: 100%;
+  margin: 15px 0;
+  border-radius: 8px;
+  filter: saturate(0.8) brightness(0.9);
+}
+
+/* ステータステキスト */
+#status, #receivedStatus {
+  text-align: center;
+  color: #9ca3af;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+/* セクション */
+.record-section,
+.preview-section,
+.exchange-section,
+.received-section {
+  margin: 25px 0;
+  padding: 20px;
+  background: #2a3352;
+  border-radius: 12px;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  #timer {
+    font-size: 2.4em;
+  }
+  
+  .btn {
+    padding: 16px;
+    font-size: 1em;
+  }
+}
