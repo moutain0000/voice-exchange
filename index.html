@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3秒ボイス交換</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<div class="container">
+  <h1>今のきもちを三秒でどうぞ</h1>
+  
+  <div class="record-section">
+    <div id="timer">3.0</div>
+    <canvas id="waveform" width="300" height="100"></canvas>
+        <button id="recordBtn" class="btn btn-record">
+      <span id="recordText">録音開始</span>
+    </button>
+  </div>
+  
+  <div class="preview-section">
+    <h2>あなたのきもち</h2>
+    <audio id="preview" controls controlslist="nodownload"></audio>
+  </div>
+
+  <div class="exchange-section">
+    <button id="exchangeBtn" class="btn btn-exchange">
+      交換する
+    </button>
+    <p id="status">まず録音してください</p>
+  </div>
+
+  <div class="received-section">
+    <h2>受け取ったきもち</h2>
+    <audio id="receivedAudio" controls controlslist="nodownload"></audio>
+    <p id="receivedStatus">交換するとここに表示されます</p>
+  </div>
+</div>
